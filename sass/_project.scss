@@ -1,0 +1,69 @@
+.project {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: 1fr;
+  }
+}
+.graphic {
+  text-align: center;
+  color: $color-text-5;
+  position: relative;
+
+  &__img {
+    width: 100%;
+    display: block;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40rem;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @media only screen and (max-width: $bp-mediam) {
+      top: 75%;
+      gap: 2rem;
+    }
+  }
+  &__description {
+    font-size: 1.6rem;
+    line-height: 1.6;
+  }
+}
+.photography {
+  text-align: center;
+  color: $color-text-6;
+  position: relative;
+
+  &__img {
+    width: 100%;
+    display: block;
+  }
+  &__text-box {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40rem;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @media only screen and (max-width: $bp-mediam) {
+      top: 75%;
+      gap: 2rem;
+    }
+  }
+  &__description {
+    font-size: 1.6rem;
+    line-height: 1.6;
+  }
+}

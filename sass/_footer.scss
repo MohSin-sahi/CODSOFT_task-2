@@ -1,0 +1,53 @@
+.footer {
+  background-color: $color-footer;
+  padding: 6rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.2rem;
+
+  &__logo {
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: $color-text-1;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6.4rem;
+    list-style: none;
+  }
+  &__link {
+    &:link,
+    &:visited {
+      font-size: 1.6rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: $color-text-7;
+      transition: all 0.3s;
+    }
+    &:hover,
+    &:active {
+      color: $color-text-2;
+    }
+  }
+  &__icon-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3.2rem;
+    margin-top: 6.4rem;
+  }
+
+  &__icon {
+    fill: $color-text-7;
+    transition: all 0.3s;
+
+    &:hover {
+      fill: $color-text-2;
+    }
+  }
+}

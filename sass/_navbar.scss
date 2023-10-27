@@ -1,0 +1,172 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo-title {
+    font-size: 3.2rem;
+    font-weight: 600;
+    color: $color-text-2;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 2.8rem;
+    }
+  }
+
+  input,
+  .hamburger {
+    display: none;
+  }
+  &__list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+  &__link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: $color-text-2;
+      font-size: 1.6rem;
+      transition: all 0.4s;
+    }
+    &:hover,
+    &:active {
+      color: $color-text-9;
+    }
+  }
+  &__last-link {
+    &:link,
+    &:visited {
+      background-color: $color-text-2;
+      color: $color-black;
+      padding: 1.2rem 2.4rem;
+      text-transform: uppercase;
+      border-radius: 10rem;
+      font-weight: 500;
+      transition: all 0.4s;
+      font-family: $font-primary;
+    }
+    &:hover,
+    &:active {
+      color: $color-text-2;
+      background-color: rgba($color-text-2, 0.2);
+    }
+  }
+}
+@media only screen and (max-width: $bp-small) {
+  .nav {
+    position: relative;
+
+    input,
+    .hamburger {
+      display: block;
+    }
+
+    input {
+      width: 30px;
+      height: 24px;
+      position: absolute;
+      right: 2px;
+      z-index: 3;
+      opacity: 0;
+    }
+
+    .hamburger {
+      width: 30px;
+      height: 24px;
+      position: absolute;
+      right: 2px;
+      z-index: 1;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+
+    .hamburger .lines {
+      width: 100%;
+      height: 4px;
+      border-radius: 10px;
+      display: block;
+      background-color: hsla(0, 0%, 100%, 0.6);
+    }
+
+    &__list {
+      position: absolute;
+      flex-direction: column;
+      justify-content: center;
+      top: 60px;
+      right: 2px;
+      background-color: $color-text-2;
+      box-shadow: 0rem 1rem 2rem rgba(#000, 0.1);
+      width: 100%;
+      gap: 4rem;
+      z-index: 5;
+      height: 60vh;
+      padding: 3.2rem;
+      text-align: center;
+      opacity: 0;
+      clip-path: polygon(0 100%, 100% 100%, 100% 0, 90% 10%, 0 10%);
+      transform: translateX(150%);
+      transition: all 0.4s ease-in-out;
+    }
+    &__link {
+      &:link,
+      &:visited {
+        font-size: 2.4rem;
+        font-weight: 600;
+        color: $color-text-8;
+        transition: all 0.4s;
+      }
+      &:hover,
+      &:active {
+        color: $color-black;
+      }
+    }
+    &__last-link {
+      &:link,
+      &:visited {
+        background-color: $color-text-4;
+        color: $color-black;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.4s;
+      }
+      &:hover,
+      &:active {
+        background-color: #fad4007e;
+      }
+    }
+
+    input[type="checkbox"]:checked ~ &__list {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+
+    .hamburger .line1 {
+      transform-origin: 0% 0%;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .hamburger .line3 {
+      transform-origin: 0% 100%;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    input[type="checkbox"]:checked ~ .hamburger .line1 {
+      transform: rotate(45deg);
+      transition: 0.3s ease-in-out;
+    }
+
+    input[type="checkbox"]:checked ~ .hamburger .line2 {
+      display: none;
+    }
+
+    input[type="checkbox"]:checked ~ .hamburger .line3 {
+      transform: rotate(-45deg);
+      transition: 0.3s ease-in-out;
+    }
+  }
+}
